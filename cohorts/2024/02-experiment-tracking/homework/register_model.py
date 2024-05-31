@@ -40,6 +40,7 @@ def train_and_log_model(data_path, params):
         mlflow.log_metric("val_rmse", val_rmse)
         test_rmse = mean_squared_error(y_test, rf.predict(X_test), squared=False)
         mlflow.log_metric("test_rmse", test_rmse)
+        print("test_rmse",test_rmse)
 
 
 @click.command()
